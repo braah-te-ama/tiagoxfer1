@@ -48,6 +48,18 @@ div#derecha-pc {
     font-size: 1.2rem;
     font-family: monospace;
     font-weight: 900;
+    position: relative;
+}
+#opciones-derecha-pc-opcion::before {
+    content: "";
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    border-bottom: 1px solid white;
+    transition: 300ms;
+}
+#opciones-derecha-pc-opcion:hover::before{
+    width: 100%;
 }
 #opciones-derecha-pc-ubicacion {
     padding: 10px 7px;
@@ -248,6 +260,7 @@ a#comprar-entrada:hover::before {
     height: 300px;
     background: url(img/fondo.png);
     min-width: 320px;
+    max-width: 487px;
     background-size: cover;
     background-position-x: center;
     position: relative;
