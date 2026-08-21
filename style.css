@@ -292,7 +292,8 @@ p.titulo-evento {
     align-items: center;
 }
 .boton-comprar-evento {
-    text-decoration: none;
+text-decoration: none;
+    position: relative;
     color: white;
     margin: 20px 0px 0px 0px;
     padding: 10px;
@@ -306,5 +307,36 @@ p.titulo-evento {
     font-family: 'gorila';
     letter-spacing: 1px;
     border: 2px solid white;
-    border-radius: 5px ;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
 }
+.boton-comprar-evento::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #901d27;
+    margin: 0px 0px 0px 152%;
+    transition: 300ms;
+    z-index: -1;
+}
+
+.boton-comprar-evento:hover::before {
+    margin: 0px 0px 0px 52%;
+}
+.boton-comprar-evento::after {
+    content: "";
+    width: 53%;
+    height: 100%;
+    background: #901d27;
+    position: absolute;
+    z-index: -1;
+    margin: 0px 0px 0px -154%;
+    transition: 300ms;
+}
+
+.boton-comprar-evento:hover::after {
+    margin: 0px 0px 0px -49%;
+}
+
